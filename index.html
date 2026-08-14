@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trevor Law Pogue | Strategic Finance Consulting</title>
-<meta name="description" content="Senior finance consultant specializing in FP&A, transaction advisory, and interim financial leadership for PE-backed, public, and venture-stage companies.">
+<title>Control Group B | Finance Leadership for Growing Companies</title>
+<meta name="description" content="Control Group B provides hands-on FP&A, transaction advisory, and interim CFO support for PE-backed, public, and venture-stage companies navigating complexity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -36,29 +36,33 @@
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(21,34,52,.97);
+    background: rgba(26,51,40,.97);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(196,148,58,.15);
+    border-bottom: 1px solid rgba(196,148,58,.12);
   }
   .nav-inner {
     max-width: 1120px; margin: 0 auto;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 2rem; height: 64px;
+    padding: 0 2rem; height: 68px;
   }
   .nav-logo {
     font-family: 'DM Serif Display', serif;
-    color: var(--white); font-size: 1.15rem; letter-spacing: .02em;
+    color: var(--white); font-size: 1.2rem; letter-spacing: .02em;
     text-decoration: none;
   }
   .nav-logo span { color: var(--gold); }
+  .nav-logo small {
+    display: block; font-family: 'Inter', sans-serif;
+    font-size: .55rem; letter-spacing: .22em; text-transform: uppercase;
+    color: rgba(255,255,255,.4); font-weight: 500; margin-top: -2px;
+  }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
     color: rgba(255,255,255,.7); text-decoration: none;
-    font-size: .85rem; font-weight: 500; letter-spacing: .04em;
+    font-size: .82rem; font-weight: 500; letter-spacing: .05em;
     text-transform: uppercase; transition: color .2s;
   }
   .nav-links a:hover { color: var(--gold-light); }
-
   .hamburger {
     display: none; background: none; border: none; cursor: pointer;
     flex-direction: column; gap: 5px; padding: 4px;
@@ -71,66 +75,75 @@
   /* ── HERO ── */
   .hero {
     background: var(--navy);
-    padding: 10rem 2rem 6rem;
+    padding: 11rem 2rem 6rem;
     position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(26,51,40,.95) 0%, rgba(35,74,56,.8) 100%);
+    pointer-events: none;
   }
   .hero::after {
     content: '';
-    position: absolute; right: -10%; top: -20%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(196,148,58,.08) 0%, transparent 70%);
+    position: absolute; right: -5%; top: -15%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(196,148,58,.06) 0%, transparent 65%);
     pointer-events: none;
   }
   .hero-inner {
-    max-width: 860px; margin: 0 auto; position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto; position: relative; z-index: 1;
   }
   .hero-eyebrow {
-    font-size: .8rem; font-weight: 600; letter-spacing: .15em;
+    font-size: .75rem; font-weight: 600; letter-spacing: .18em;
     text-transform: uppercase; color: var(--gold);
     margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: .75rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px; background: var(--gold);
   }
   .hero h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
     color: var(--white); line-height: 1.2;
     margin-bottom: 1.5rem; font-weight: 400;
   }
   .hero p {
-    font-size: 1.1rem; color: rgba(255,255,255,.65);
-    max-width: 640px; margin-bottom: 2.5rem;
-    line-height: 1.8;
+    font-size: 1.05rem; color: rgba(255,255,255,.6);
+    max-width: 620px; margin-bottom: 2.5rem;
+    line-height: 1.85;
+  }
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
   }
   .hero-cta {
     display: inline-block;
-    background: var(--gold); color: var(--navy);
-    padding: .9rem 2.2rem; font-size: .9rem; font-weight: 600;
-    text-decoration: none; letter-spacing: .04em;
-    transition: background .2s, transform .15s;
+    padding: .9rem 2.2rem; font-size: .85rem; font-weight: 600;
+    text-decoration: none; letter-spacing: .05em;
+    text-transform: uppercase; transition: all .2s;
   }
-  .hero-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-  .hero-stats {
-    display: flex; gap: 3rem; margin-top: 4rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid rgba(255,255,255,.1);
+  .hero-cta.primary { background: var(--gold); color: var(--navy); }
+  .hero-cta.primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .hero-cta.secondary {
+    background: transparent; color: rgba(255,255,255,.7);
+    border: 1px solid rgba(255,255,255,.2);
   }
-  .hero-stat strong {
-    display: block;
-    font-family: 'DM Serif Display', serif;
-    font-size: 2rem; color: var(--gold);
-  }
-  .hero-stat span {
-    font-size: .78rem; color: rgba(255,255,255,.45);
-    text-transform: uppercase; letter-spacing: .08em;
-  }
+  .hero-cta.secondary:hover { border-color: var(--gold); color: var(--gold); }
 
   /* ── SECTIONS ── */
-  section { padding: 5.5rem 2rem; }
+  section { padding: 6rem 2rem; }
   .section-inner { max-width: 1000px; margin: 0 auto; }
   .section-label {
-    font-size: .75rem; font-weight: 600; letter-spacing: .15em;
+    font-size: .72rem; font-weight: 600; letter-spacing: .18em;
     text-transform: uppercase; color: var(--gold);
     margin-bottom: .75rem;
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 20px; height: 1px; background: var(--gold);
   }
   .section-title {
     font-family: 'DM Serif Display', serif;
@@ -138,120 +151,202 @@
     margin-bottom: 1rem; color: var(--navy);
   }
   .section-intro {
-    color: var(--text-light); font-size: 1.05rem;
-    max-width: 640px; margin-bottom: 3rem;
+    color: var(--text-light); font-size: 1.02rem;
+    max-width: 620px; margin-bottom: 3rem;
   }
 
-  /* ── SERVICES ── */
-  .services-section { background: var(--ivory); }
-  .services-grid {
+  /* ── PAIN POINTS ── */
+  .pain-section { background: var(--ivory); }
+  .pain-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  .service-card {
+  .pain-card {
     background: var(--white);
-    padding: 2.2rem 2rem;
+    padding: 2.4rem 2rem;
     border: 1px solid var(--border);
+    position: relative;
     transition: border-color .2s, box-shadow .2s;
   }
-  .service-card:hover {
-    border-color: var(--gold);
-    box-shadow: 0 4px 20px rgba(21,34,52,.06);
+  .pain-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 0; height: 3px; background: var(--gold);
+    transition: width .3s;
   }
-  .service-icon {
-    width: 40px; height: 40px; margin-bottom: 1.2rem;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--navy); color: var(--gold);
+  .pain-card:hover::before { width: 100%; }
+  .pain-card:hover { box-shadow: 0 6px 24px rgba(26,51,40,.06); }
+  .pain-card .pain-q {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
+    font-size: 1.1rem; color: var(--navy);
+    margin-bottom: .75rem; line-height: 1.4;
   }
-  .service-card h3 {
-    font-size: 1.1rem; font-weight: 600; margin-bottom: .6rem;
-    color: var(--navy);
-  }
-  .service-card p {
-    font-size: .92rem; color: var(--text-light); line-height: 1.7;
+  .pain-card p {
+    font-size: .9rem; color: var(--text-light); line-height: 1.75;
   }
 
-  /* ── EXPERIENCE ── */
-  .experience-section { background: var(--white); }
-  .exp-timeline { position: relative; padding-left: 2rem; }
-  .exp-timeline::before {
-    content: ''; position: absolute; left: 0; top: 0;
-    width: 2px; height: 100%; background: var(--border);
-  }
-  .exp-item {
-    position: relative; padding-bottom: 2.5rem;
-  }
-  .exp-item::before {
-    content: '';
-    position: absolute; left: -2rem; top: .45rem;
-    width: 10px; height: 10px; background: var(--gold);
-    border: 2px solid var(--white);
-    transform: translateX(-4px);
-  }
-  .exp-item:last-child { padding-bottom: 0; }
-  .exp-date {
-    font-size: .78rem; color: var(--gold);
-    font-weight: 600; letter-spacing: .06em;
-    text-transform: uppercase; margin-bottom: .25rem;
-  }
-  .exp-role {
-    font-size: 1.05rem; font-weight: 600; color: var(--navy);
-    margin-bottom: .15rem;
-  }
-  .exp-company { font-size: .9rem; color: var(--text-light); margin-bottom: .5rem; }
-  .exp-desc {
-    font-size: .9rem; color: var(--text-light); line-height: 1.7;
-    max-width: 600px;
-  }
-
-  /* ── EDUCATION ── */
-  .edu-section { background: var(--ivory); }
-  .edu-grid {
+  /* ── SOLUTIONS ── */
+  .solutions-section { background: var(--white); }
+  .sol-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .sol-item {
+    padding: 2.2rem 2rem;
+    border: 1px solid var(--border);
+    margin-top: -1px; margin-left: -1px;
+  }
+  .sol-item h3 {
+    font-size: 1rem; font-weight: 600; color: var(--navy);
+    margin-bottom: .5rem;
+  }
+  .sol-item p {
+    font-size: .88rem; color: var(--text-light); line-height: 1.75;
+  }
+  .sol-item .sol-outcome {
+    margin-top: .75rem;
+    font-size: .8rem; font-weight: 600; color: var(--gold);
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+
+  /* ── HOW WE WORK ── */
+  .process-section { background: var(--ivory); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    counter-reset: process;
+  }
+  .process-item {
+    counter-increment: process;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+  .process-item::before {
+    content: '0' counter(process);
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem; color: var(--gold);
+    display: block; margin-bottom: .75rem;
+  }
+  .process-item h3 {
+    font-size: .95rem; font-weight: 600; color: var(--navy);
+    margin-bottom: .5rem;
+  }
+  .process-item p {
+    font-size: .88rem; color: var(--text-light); line-height: 1.75;
+  }
+
+  /* ── RESULTS ── */
+  .results-section {
+    background: var(--navy); color: var(--white);
+  }
+  .results-section .section-title { color: var(--white); }
+  .results-section .section-intro { color: rgba(255,255,255,.55); }
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
   }
-  .edu-card {
-    padding: 1.8rem 0;
-    border-top: 3px solid var(--navy);
+  .result-item {
+    padding: 1.8rem 1.2rem;
+    border: 1px solid rgba(255,255,255,.08);
+    text-align: center;
   }
-  .edu-card h3 {
+  .result-item strong {
+    display: block;
     font-family: 'DM Serif Display', serif;
-    font-size: 1.15rem; color: var(--navy);
-    margin-bottom: .35rem;
+    font-size: 2rem; color: var(--gold);
+    margin-bottom: .4rem;
   }
-  .edu-card .edu-degree {
-    font-size: .9rem; color: var(--text); margin-bottom: .2rem;
-  }
-  .edu-card .edu-year {
-    font-size: .8rem; color: var(--text-light);
+  .result-item span {
+    font-size: .8rem; color: rgba(255,255,255,.5);
+    line-height: 1.5;
   }
 
-  /* ── TOOLS ── */
-  .tools-section { background: var(--white); }
+  /* ── INDUSTRIES ── */
+  .industries-section { background: var(--white); }
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .ind-item {
+    padding: 1.4rem 1.2rem;
+    border: 1px solid var(--border);
+    font-size: .9rem; font-weight: 500;
+    color: var(--navy);
+    transition: border-color .2s;
+  }
+  .ind-item:hover { border-color: var(--gold); }
+  .ind-item span {
+    display: block; font-size: .75rem;
+    color: var(--text-light); margin-top: .3rem;
+    font-weight: 400;
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--ivory); }
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem; align-items: start;
+  }
+  .about-text p {
+    font-size: .95rem; color: var(--text-light); line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+  .about-credentials {
+    border-left: 3px solid var(--gold);
+    padding-left: 2rem;
+  }
+  .about-credentials h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; color: var(--navy);
+    margin-bottom: .2rem;
+  }
+  .about-credentials .about-title {
+    font-size: .8rem; color: var(--gold);
+    font-weight: 600; text-transform: uppercase;
+    letter-spacing: .08em; margin-bottom: 1.2rem;
+  }
+  .cred-list { list-style: none; }
+  .cred-list li {
+    font-size: .88rem; color: var(--text-light);
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .cred-list li strong {
+    display: block; color: var(--text); font-weight: 600;
+  }
   .tools-wrap {
-    display: flex; flex-wrap: wrap; gap: .6rem;
+    display: flex; flex-wrap: wrap; gap: .5rem;
+    margin-top: 1.5rem;
   }
   .tool-tag {
-    padding: .45rem 1rem;
-    background: var(--ivory);
+    padding: .35rem .8rem;
+    background: var(--white);
     border: 1px solid var(--border);
-    font-size: .82rem; font-weight: 500;
+    font-size: .78rem; font-weight: 500;
     color: var(--slate);
   }
 
   /* ── CONTACT ── */
   .contact-section {
     background: var(--navy); color: var(--white);
+    position: relative;
   }
-  .contact-section .section-label { color: var(--gold); }
+  .contact-section::before {
+    content: '';
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(26,51,40,.95) 0%, rgba(35,74,56,.85) 100%);
+    pointer-events: none;
+  }
+  .contact-section .section-inner { position: relative; z-index: 1; }
   .contact-section .section-title { color: var(--white); }
-  .contact-section .section-intro { color: rgba(255,255,255,.6); }
+  .contact-section .section-intro { color: rgba(255,255,255,.55); }
   .contact-grid {
-    display: flex; gap: 2rem; flex-wrap: wrap;
+    display: flex; gap: 2.5rem; flex-wrap: wrap;
   }
   .contact-item {
     display: flex; align-items: center; gap: .75rem;
@@ -264,31 +359,44 @@
   }
   .contact-item a, .contact-item span {
     color: rgba(255,255,255,.8);
-    text-decoration: none; font-size: .95rem;
+    text-decoration: none; font-size: .93rem;
   }
   .contact-item a:hover { color: var(--gold-light); }
 
   /* ── FOOTER ── */
   footer {
     background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,.08);
-    padding: 2rem; text-align: center;
-    font-size: .8rem; color: rgba(255,255,255,.3);
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding: 2.5rem 2rem; text-align: center;
   }
+  .footer-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .78rem; color: rgba(255,255,255,.3);
+  }
+  .footer-inner a {
+    color: rgba(255,255,255,.3); text-decoration: none;
+  }
+  .footer-inner a:hover { color: var(--gold); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .hero { padding: 8rem 1.5rem 4rem; }
-    .hero-stats { flex-direction: column; gap: 1.5rem; }
     section { padding: 4rem 1.5rem; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .sol-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .about-layout { grid-template-columns: 1fr; }
     .contact-grid { flex-direction: column; }
+    .footer-inner { flex-direction: column; gap: .5rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .hero-cta, .service-card { transition: none; }
+    .hero-cta, .pain-card { transition: none; }
   }
 </style>
 </head>
@@ -297,11 +405,15 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo">TLP<span>.</span></a>
+    <a href="#" class="nav-logo">
+      Control Group B<span>.</span>
+      <small>Strategic Finance Consulting</small>
+    </a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a href="#challenges">Challenges</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -313,136 +425,170 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Strategic Finance Consulting</div>
-    <h1>Finance leadership that scales with your business.</h1>
-    <p>I help PE-backed, public, and venture-stage companies build the financial infrastructure they need to make confident decisions — from forecasting models and board reporting to full interim CFO-level support.</p>
-    <a href="#contact" class="hero-cta">Start a Conversation</a>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <strong>10+</strong>
-        <span>Years Experience</span>
+    <div class="hero-eyebrow">For CEOs &amp; CFOs</div>
+    <h1>Your business is outgrowing your finance function.</h1>
+    <p>You need a board-ready forecast by Friday. Your CFO just gave notice. The PE firm wants a Quality of Earnings done yesterday. You don't need a big firm with a slow ramp — you need someone who's done this before, can start now, and will leave your team stronger when the engagement ends.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="hero-cta primary">Talk to Us</a>
+      <a href="#challenges" class="hero-cta secondary">See If We Can Help</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="pain-section" id="challenges">
+  <div class="section-inner">
+    <div class="section-label">Challenges We Solve</div>
+    <h2 class="section-title">Sound familiar?</h2>
+    <p class="section-intro">These are the situations that typically bring companies to us. If you're navigating any of them, we can help.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-q">"Our CFO left and the board meeting is in six weeks."</div>
+        <p>We step into interim leadership roles and maintain reporting cadence, board preparation, and team management from day one — so the business doesn't miss a beat while you search for a permanent hire.</p>
       </div>
-      <div class="hero-stat">
-        <strong>$1B</strong>
-        <span>Transaction Value</span>
+      <div class="pain-card">
+        <div class="pain-q">"We're going through a transaction and need financial diligence fast."</div>
+        <p>We prepare and defend Quality of Earnings analyses, build investor-ready data rooms, and manage the financial workstream of your deal — whether you're buying, selling, or raising capital.</p>
       </div>
-      <div class="hero-stat">
-        <strong>PE · Public · VC</strong>
-        <span>Across Stages</span>
+      <div class="pain-card">
+        <div class="pain-q">"The board is asking questions our reporting can't answer."</div>
+        <p>We build the forecasting models, KPI dashboards, and planning cadences that give your leadership team confidence — not just numbers, but the narrative behind them.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-q">"We're growing fast and our finance team can't keep up."</div>
+        <p>We embed with your team to build the infrastructure that scales — automated reporting, integrated systems, documented processes — so your finance function grows with the business, not behind it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services-section" id="services">
+<!-- SOLUTIONS -->
+<section class="solutions-section" id="solutions">
   <div class="section-inner">
-    <div class="section-label">What I Do</div>
-    <h2 class="section-title">Core Consulting Areas</h2>
-    <p class="section-intro">Hands-on finance expertise delivered directly — no intermediary, no overhead, no ramp-up time.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">F</div>
-        <h3>FP&A & Forecasting</h3>
-        <p>End-to-end budgeting, forecasting, and financial modeling. Revenue models, 13-week cashflows, 3-statement builds, KPI dashboards, and the planning cadences that keep leadership aligned.</p>
+    <div class="section-label">What We Deliver</div>
+    <h2 class="section-title">Engagements built around your timeline, not ours.</h2>
+    <p class="section-intro">Every engagement is scoped to a defined outcome. We don't sell hours — we solve problems.</p>
+    <div class="sol-grid">
+      <div class="sol-item">
+        <h3>Interim CFO &amp; Finance Leadership</h3>
+        <p>Full-scope financial leadership during transitions. We manage your team, own the board deck, run the close, and keep stakeholders informed while you hire with confidence.</p>
+        <div class="sol-outcome">Typical engagement: 3–9 months</div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">T</div>
-        <h3>Transaction Advisory</h3>
-        <p>Quality of Earnings, variance analysis, investor-ready financial packaging, and due diligence support. Rooted in nearly $1 billion in deal experience from investment banking and private placement.</p>
+      <div class="sol-item">
+        <h3>Transaction &amp; Due Diligence Support</h3>
+        <p>Quality of Earnings, sell-side financial packaging, data room preparation, and buyer Q&amp;A management. We've supported nearly $1B in combined deal value.</p>
+        <div class="sol-outcome">Typical engagement: 4–12 weeks</div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">L</div>
-        <h3>Interim Finance Leadership</h3>
-        <p>Backfill and stabilize during CFO transitions, organizational changes, or rapid growth. I step in, keep the cadence running, and build documentation so the next leader inherits clean infrastructure.</p>
+      <div class="sol-item">
+        <h3>FP&amp;A Build-Out</h3>
+        <p>From a blank spreadsheet to a board-ready planning function. We build your budget model, rolling forecast, variance reporting, and the monthly cadence to keep it current.</p>
+        <div class="sol-outcome">Typical engagement: 6–16 weeks</div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">R</div>
-        <h3>Reporting & Automation</h3>
-        <p>Transform fragmented data into automated, scalable reporting. Alteryx, Tableau, SQL, and ERP integration — connecting dashboards to source systems for real-time decision-making.</p>
+      <div class="sol-item">
+        <h3>Reporting &amp; Systems Integration</h3>
+        <p>We connect your ERP, build automated dashboards in Tableau or Excel, and eliminate the manual work that's consuming your team's bandwidth every month-end.</p>
+        <div class="sol-outcome">Typical engagement: 4–10 weeks</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="experience-section" id="experience">
+<!-- PROCESS -->
+<section class="process-section">
   <div class="section-inner">
-    <div class="section-label">Track Record</div>
-    <h2 class="section-title">Selected Experience</h2>
-    <p class="section-intro">A career spanning investment banking, PE-backed operations, defense manufacturing, and independent consulting.</p>
-    <div class="exp-timeline">
-      <div class="exp-item">
-        <div class="exp-date">2021 – Present</div>
-        <div class="exp-role">Independent Financial Consultant</div>
-        <div class="exp-company">FP&A, Transaction Advisory & Interim Leadership</div>
-        <div class="exp-desc">Senior consultant across communications technology, medical devices, and food service. Led Quality of Earnings for a $170MM PE-owned business. Built automated reporting pipelines and supported multiple CFO transitions.</div>
+    <div class="section-label">How We Work</div>
+    <h2 class="section-title">Designed to make ourselves unnecessary.</h2>
+    <p class="section-intro">Our goal isn't a long-term retainer. It's to solve the problem and hand you back a finance function that runs without us.</p>
+    <div class="process-grid">
+      <div class="process-item">
+        <h3>Scope &amp; Diagnose</h3>
+        <p>We start with a focused conversation — not a lengthy discovery phase. Within the first week, we map the gaps, define the deliverables, and agree on what "done" looks like.</p>
       </div>
-      <div class="exp-item">
-        <div class="exp-date">2020 – 2021</div>
-        <div class="exp-role">FP&A Manager</div>
-        <div class="exp-company">Emerald Textiles · PE-Backed Roll-Up · San Diego</div>
-        <div class="exp-desc">Managed budgeting and forecasting for 7 entities. Designed real-time KPI dashboards and implemented Tableau and SQL reporting with data warehousing across the organization.</div>
+      <div class="process-item">
+        <h3>Execute &amp; Build</h3>
+        <p>We work inside your systems and alongside your team. Everything we build — models, reports, processes — is documented, tested, and designed for your people to own.</p>
       </div>
-      <div class="exp-item">
-        <div class="exp-date">2018 – 2020</div>
-        <div class="exp-role">Sr. Financial Analyst</div>
-        <div class="exp-company">Meggitt Engine Systems · Aerospace & Defense · San Diego</div>
-        <div class="exp-desc">Finance liaison across bid proposals, operations, and program management supporting a $750MM long-term agreement. Automated reporting, reducing turnaround by over 65%. Reduced WIP variance by more than $3MM.</div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-date">2015 – 2018</div>
-        <div class="exp-role">Investment Banking & Private Placement</div>
-        <div class="exp-company">Cappello Global · Emantium Group · Los Angeles</div>
-        <div class="exp-desc">Evaluated sell-side advisory and capital markets transactions across consumer, real estate, energy, and media. Nearly $1 billion in combined transaction experience.</div>
+      <div class="process-item">
+        <h3>Transfer &amp; Exit</h3>
+        <p>Before we leave, we train your team, hand off documentation, and make sure the next person — whether a new hire or your existing staff — can run everything from day one.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section class="edu-section" id="education">
+<!-- RESULTS -->
+<section class="results-section" id="results">
   <div class="section-inner">
-    <div class="section-label">Credentials</div>
-    <h2 class="section-title">Education</h2>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <h3>Harvard University</h3>
-        <div class="edu-degree">BA, Economics & Psychology</div>
-        <div class="edu-year">Cambridge, MA · 2006 – 2010</div>
+    <div class="section-label">Results</div>
+    <h2 class="section-title">What our clients walk away with.</h2>
+    <p class="section-intro">These are outcomes from real engagements — not projections.</p>
+    <div class="results-grid">
+      <div class="result-item">
+        <strong>65%</strong>
+        <span>Reduction in reporting cycle time</span>
       </div>
-      <div class="edu-card">
-        <h3>Trinity College Dublin</h3>
-        <div class="edu-degree">MSc Economic Policy · PgD Conflict Resolution</div>
-        <div class="edu-year">Dublin, Ireland · 2012 – 2015</div>
+      <div class="result-item">
+        <strong>$3M+</strong>
+        <span>Variance eliminated through process redesign</span>
       </div>
-      <div class="edu-card">
-        <h3>King's Inns</h3>
-        <div class="edu-degree">Common Law & Legal Research</div>
-        <div class="edu-year">Dublin, Ireland · 2011 – 2012</div>
+      <div class="result-item">
+        <strong>$170M</strong>
+        <span>PE transaction supported with QoE analysis</span>
+      </div>
+      <div class="result-item">
+        <strong>7</strong>
+        <span>Entities managed under unified FP&amp;A</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOOLS -->
-<section class="tools-section">
+<!-- INDUSTRIES -->
+<section class="industries-section">
   <div class="section-inner">
-    <div class="section-label">Toolkit</div>
-    <h2 class="section-title">Software & Platforms</h2>
-    <div class="tools-wrap">
-      <span class="tool-tag">Excel</span>
-      <span class="tool-tag">SQL</span>
-      <span class="tool-tag">Alteryx</span>
-      <span class="tool-tag">Tableau</span>
-      <span class="tool-tag">Microsoft Dynamics</span>
-      <span class="tool-tag">Oracle ERP</span>
-      <span class="tool-tag">Jet Reporting</span>
-      <span class="tool-tag">Data Warehousing</span>
-      <span class="tool-tag">Bloomberg</span>
-      <span class="tool-tag">Capital IQ</span>
-      <span class="tool-tag">Preqin</span>
-      <span class="tool-tag">Macabacus</span>
+    <div class="section-label">Industries</div>
+    <h2 class="section-title">We understand your operating environment.</h2>
+    <p class="section-intro">Finance challenges look different in every sector. We bring relevant pattern recognition — not a generic playbook.</p>
+    <div class="ind-grid">
+      <div class="ind-item">Communications Technology<span>PE-Backed Growth</span></div>
+      <div class="ind-item">Aerospace &amp; Defense<span>Program Finance &amp; Compliance</span></div>
+      <div class="ind-item">Medical Devices<span>Commercialization &amp; Scale</span></div>
+      <div class="ind-item">Consumer &amp; Retail<span>Multi-Unit Operations</span></div>
+      <div class="ind-item">Industrial Services<span>PE Roll-Up Integration</span></div>
+      <div class="ind-item">Food &amp; Hospitality<span>Franchise &amp; Corporate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="section-label">About the Firm</div>
+    <h2 class="section-title">Built by operators, not advisors.</h2>
+    <div class="about-layout">
+      <div class="about-text">
+        <p>Control Group B was founded on a simple premise: growing companies deserve senior-level finance talent without the overhead of a big firm or the unpredictability of a staffing agency.</p>
+        <p>Our team brings direct experience from investment banking, PE-backed operations, aerospace program finance, and multi-entity FP&amp;A management. We've sat in the seat — managing board reporting, defending Quality of Earnings analyses, building forecasting infrastructure from scratch — and we bring that perspective to every engagement.</p>
+        <p>We work best with companies in transition: a CFO departure, a pending transaction, a PE sponsor asking for better reporting, or a growth phase that's outpaced the current finance infrastructure. If that sounds like your situation, we should talk.</p>
+      </div>
+      <div class="about-credentials">
+        <h3>Trevor Law Pogue</h3>
+        <div class="about-title">Managing Director</div>
+        <ul class="cred-list">
+          <li><strong>Harvard University</strong>BA, Economics &amp; Psychology</li>
+          <li><strong>Trinity College Dublin</strong>MSc Economic Policy</li>
+          <li><strong>King's Inns, Dublin</strong>Common Law &amp; Legal Research</li>
+          <li><strong>10+ years</strong>IB, PE-backed ops, defense, consulting</li>
+        </ul>
+        <div class="tools-wrap">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">SQL</span>
+          <span class="tool-tag">Alteryx</span>
+          <span class="tool-tag">Tableau</span>
+          <span class="tool-tag">Dynamics</span>
+          <span class="tool-tag">Oracle</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -450,9 +596,9 @@
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="section-inner">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title">Ready to work together?</h2>
-    <p class="section-intro">Whether you need interim finance support, a financial model built from scratch, or help navigating a transaction — I'm available for direct engagement.</p>
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">Let's figure out if we're the right fit.</h2>
+    <p class="section-intro">No pitch deck. No sales process. Just a conversation about what you're dealing with and whether we can help. Most engagements begin within two weeks of the first call.</p>
     <div class="contact-grid">
       <div class="contact-item">
         <div class="contact-icon">✉</div>
@@ -464,14 +610,17 @@
       </div>
       <div class="contact-item">
         <div class="contact-icon">◉</div>
-        <span>Raleigh, NC · Available Remotely</span>
+        <span>Raleigh, NC · Serving Clients Nationwide</span>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  &copy; 2026 Trevor Law Pogue. All rights reserved.
+  <div class="footer-inner">
+    <span>&copy; 2026 Control Group B LLC. All rights reserved.</span>
+    <a href="#contact">Contact Us</a>
+  </div>
 </footer>
 
 </body>
